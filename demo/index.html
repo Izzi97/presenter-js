@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module">
+    import { toFullscreen } from "../lib/document.js"
+    import load from "../lib/index.js"
+    import "../lib/templates.js"
+
+    const presentation = document.querySelector("presentation-slides")
+    const slides = presentation.getSlides()
+
+    const { start } = load(slides)
+
+    toFullscreen(document)
+
+    const { error, stop } = start(document.body)
+
+    if (error)
+      console.error(error)
+  </script>
+  <title>Presenter JS</title>
+</head>
+<body>
+  <presentation-slides title="Wuahuahuaaaa">
+    <title-slide>This is the Title</title-slide>
+    <padded-slide>
+      <h1>First Slide</h1>
+      <ol>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, optio nobis.</li>
+      </ol>
+    </padded-slide>
+    <slide-base>Numbered Slide</slide-base>
+  </presentation-slides>
+</body>
+</html>
