@@ -25,7 +25,9 @@
 </head>
 <body>
   <presentation-slides title="Wuahuahuaaaa">
-    <title-slide>This is the Title</title-slide>
+    <title-slide>
+      This is the Title
+    </title-slide>
     <padded-slide>
       <h1>First Slide</h1>
       <ol>
@@ -34,7 +36,10 @@
         <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, optio nobis.</li>
       </ol>
     </padded-slide>
-    <slide-base>Numbered Slide</slide-base>
+    <headed-slide>
+      <just-text slot="heading">This is the Heading</just-text>
+      <div slot="content">this is some content</div>
+    </headed-slide>
   </presentation-slides>
 </body>
 </html>
