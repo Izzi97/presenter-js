@@ -4,27 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="module">
-    import { toFullscreen } from "../lib/document.js"
-    import load from "../lib/index.js"
-    import "../lib/templates.js"
 
-    const presentation = document.querySelector("presentation-slides")
-    const slides = presentation.getSlides()
-
-    const { start } = load(slides)
-
-    toFullscreen(document)
-
-    const { error, stop } = start(document.body)
-
-    if (error)
-      console.error(error)
-  </script>
-  <title>Presenter JS</title>
-</head>
-<body>
-  <presentation-slides title="Wuahuahuaaaa">
+  <slide-set>
     <title-slide>
       This is the Title
     </title-slide>
@@ -40,6 +21,25 @@
       <just-text slot="heading">This is the Heading</just-text>
       <div slot="content">this is some content</div>
     </headed-slide>
-  </presentation-slides>
+  </slide-set>
+
+  <script type="module">
+    import { toFullscreen } from "../lib/document.js"
+    import load from "../lib/present.js"
+    import "../lib/templates.js"
+
+    const slideSet = document.querySelector("slide-set")
+    const { start } = load(slideSet)
+
+    toFullscreen(document)
+
+    const { error, stop } = start(document.body)
+
+    if (error)
+      console.error(error)
+  </script>
+  <title>Presenter JS</title>
+</head>
+<body>
 </body>
 </html>
