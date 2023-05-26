@@ -25,15 +25,13 @@
 
   <script type="module">
     import { toFullscreen } from "../lib/document.js"
-    import load from "../lib/present.js"
+    import load, { themes } from "../lib/present.js"
     import "../lib/templates.js"
 
     const slideSet = document.querySelector("slide-set")
-    const { start } = load(slideSet)
+    const { start } = load(slideSet, themes.dark)
 
-    toFullscreen(document)
-
-    const { error, stop } = start(document.body)
+    const { error, stop } = start()
 
     if (error)
       console.error(error)
