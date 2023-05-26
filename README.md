@@ -7,18 +7,21 @@ It displays minimalistic presentations (like MS PowerPoint).
 ## 🕹 How to use it
 
 ```
-import load from "../lib/index.js"
+<slide-set>
+...
+</slide-set>
 
-const slides = ...
-// acquire an array of DOM-elements to be displayed as slides
+<script>
+import load, { themes } from "../lib/present.js"
 
-const { start } = load(slides)
+const slideSet = document.querySelector("slide-set")
+const { start } = load(slideSet, themes.dark)
 
-const { error } = start()
+const { error, stop } = start()
 
 if (error)
   console.error(error)
-
+</script>
 ```
 
 The call to the `start` function will spin up a new browser popup window which displays the presentation.
