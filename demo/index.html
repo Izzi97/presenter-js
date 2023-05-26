@@ -6,27 +6,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <slide-set>
+
     <title-slide>
-      This is the Title
+      Welcome to Presenter-JS
     </title-slide>
-    <simple-slide>
-      <h1>First Slide</h1>
-      <ol>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-        <li>Lorem ipsum dolor sit amet consectetur.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, optio nobis.</li>
-      </ol>
-    </simple-slide>
+
     <headed-slide>
-      <just-text slot="heading">This is the Heading</just-text>
-      <div slot="content">this is some content</div>
+      <just-text slot="heading">🦧 What it does</just-text>
+      <figure slot="content">
+        <blockquote>
+          It displays minimalistic presentations (like MS PowerPoint).
+        </blockquote>
+        <figcaption>
+          <cite>from <code>/README.md</code> by xmaek, author of this library</cite>
+        </figcaption>
+      </figure>
     </headed-slide>
+
+    <headed-slide>
+      <just-text slot="heading">🕹 How to use it</just-text>
+      <div slot="content">
+        <p>Import the load function – this will transitively import the custom web-components you will need to define your slides:</p>
+        <code>
+          <pre>
+&lt;script&gt;
+  import load from "../lib/index.js"
+&lt;/script&gt;
+          </pre>
+        </code>
+      </div>
+    </headed-slide>
+
+    <headed-slide>
+      <just-text slot="heading">🕹 How to use it</just-text>
+      <div slot="content">
+        <p>Define your presentation's slides with custom HTML elements:</p>
+        <code>
+          <pre>
+&lt;slide-set&gt;
+
+  &lt;title-slide&gt;Your Title Here&lt;/title-slide&gt;
+
+  &lt;headed-slide&gt;
+    &lt;just-text slot="heading"&gt;&lt;/just-text&gt;
+    &lt;ol slot="content"&gt;
+      &lt;li&gt;this is...&lt;/li&gt;
+      &lt;li&gt;just some...&lt;/li&gt;
+      &lt;li&gt;sample content.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/headed-slide&gt;
+
+  &lt;simple-slide&gt;
+    Thanks for Your attention, bye 👋🏽
+  &lt;/simple-slide&gt;
+
+&lt;/slide-set&gt;
+          </pre>
+        </code>
+      </div>
+    </headed-slide>
+
+    <headed-slide>
+      <just-text slot="heading">🕹 How to use it</just-text>
+      <div slot="content">
+        <p>Import the available default-themes, grab your slide-set from the DOM, load and start the presentation:</p>
+        <code>
+          <pre>
+import { themes } from "../lib/present.js"
+
+const slideSet = document.querySelector("slide-set")
+const { start } = load(slideSet, themes.dark)
+
+const { error, stop } = start()
+
+if (error)
+  console.error(error)
+          </pre>
+        </code>
+      </div>
+    </headed-slide>
+
+    <simple-slide numbered="false">
+      <h2>Thank you for looking at this presentation!</h2>
+      <h3>&</h3>
+      <h2>Have fun with Presenter-JS!</h2>
+    </simple-slide>
+
   </slide-set>
 
   <script type="module">
-    import { toFullscreen } from "../lib/document.js"
     import load, { themes } from "../lib/present.js"
-    import "../lib/templates.js"
 
     const slideSet = document.querySelector("slide-set")
     const { start } = load(slideSet, themes.dark)
