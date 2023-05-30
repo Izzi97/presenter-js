@@ -1,0 +1,30 @@
+{
+  "name": "@xmaek/presenter-js",
+  "version": "1.0.0",
+  "description": "A lightweight JS lib for displaying minimalistic presentations written in HTML/JS in the browser.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Izzi97/presenter-js.git"
+  },
+  "keywords": [
+    "presentation",
+    "slideshow",
+    "js-ecma-2020",
+    "minimal",
+    "no-dependencies",
+    "functional"
+  ],
+  "author": "xmaek <ismael.agchar@gmail.com> (http://xmaek.online)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Izzi97/presenter-js/issues"
+  },
+  "homepage": "https://github.com/Izzi97/presenter-js#readme"
+}
